@@ -52,3 +52,12 @@ CREATE TABLE IF NOT EXISTS departamento(
     descricao VARCHAR(30)
 );
 DESC departamento;
+
+CREATE TABLE IF NOT EXISTS funcionario(
+    id_func INTEGER,
+    depto INTEGER,
+    cargo INTEGER,
+    nome VARCHAR(60),
+    cpf VARCHAR(14)
+);
+DESC funcionario;
