@@ -7,15 +7,19 @@
    ======================================================= */
 
 
--- Criando novo banco caso não exista
 CREATE DATABASE IF NOT EXISTS bd_roteiro_01;
 
--- Criando tabelas
 CREATE TABLE IF NOT EXISTS candidato_funcionario(
     funcionario INTEGER,
     candidato INTEGER,
     dt_inscricao DATE
 );
+DESC candidato;
 
--- Visualizando tabelas
+CREATE TABLE IF NOT EXISTS candidato(
+    id_candidato INTEGER,
+    nome VARCHAR(60),
+    cpf VARCHAR(14)
+);
 DESC candidato_funcionario;
+
