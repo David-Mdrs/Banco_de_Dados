@@ -31,3 +31,12 @@ CREATE TABLE IF NOT EXISTS inscricao(
     dt_inscricao DATE
 );
 DESC inscricao;
+
+CREATE TABLE IS NOT EXISTS teste(
+    id_teste INTEGER,
+    processo INTEGER,
+    cargo INTEGER,
+    inscricao INTEGER,
+    dt_teste DATE
+);
+DESC teste;
