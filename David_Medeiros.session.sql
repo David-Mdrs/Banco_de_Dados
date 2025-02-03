@@ -6,8 +6,12 @@
    Versão: 1.0
    ======================================================= */
 
+-- Crianco novo banco de dados caso não exista
 
 CREATE DATABASE IF NOT EXISTS bd_roteiro_01;
+
+
+-- Criando tabelas do banco de dados caso não existam
 
 CREATE TABLE IF NOT EXISTS candidato_funcionario(
     funcionario INTEGER,
@@ -32,7 +36,7 @@ CREATE TABLE IF NOT EXISTS inscricao(
 );
 DESC inscricao;
 
-CREATE TABLE IS NOT EXISTS teste(
+CREATE TABLE IF NOT EXISTS teste(
     id_teste INTEGER,
     processo INTEGER,
     cargo INTEGER,
@@ -67,3 +71,8 @@ CREATE TABLE IF NOT EXISTS processo_seletivo(
     descricao VARCHAR(60)
 );
 DESC processo_seletivo;
+
+
+-- Visualizando para confirmar existência das tabelas
+
+SHOW TABLES;
