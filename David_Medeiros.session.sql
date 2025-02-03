@@ -61,3 +61,9 @@ CREATE TABLE IF NOT EXISTS funcionario(
     cpf VARCHAR(14)
 );
 DESC funcionario;
+
+CREATE TABLE IF NOT EXISTS processo_seletivo(
+    id_processo INTEGER,
+    descricao VARCHAR(60)
+);
+DESC processo_seletivo;
