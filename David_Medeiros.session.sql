@@ -2,7 +2,7 @@
    Projeto: Roteiro 01 - Disciplina de Banco de Dados
    Autor: David Medeiros Santos
    Data de Criação: 02/02/2025
-   Descrição: Exp´lorando os primeiros comandos SQL DDL
+   Descrição: Explorando os primeiros comandos SQL DDL
    Versão: 1.0
    ======================================================= */
 
@@ -22,4 +22,3 @@ CREATE TABLE IF NOT EXISTS candidato(
     cpf VARCHAR(14)
 );
 DESC candidato_funcionario;
-
