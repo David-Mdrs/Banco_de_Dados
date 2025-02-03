@@ -22,3 +22,12 @@ CREATE TABLE IF NOT EXISTS candidato(
     cpf VARCHAR(14)
 );
 DESC candidato_funcionario;
+
+
+CREATE TABLE IF NOT EXISTS inscricao(
+    id_inscricao INTEGER,
+    candidato INTEGER,
+    cargo INTEGER,
+    dt_inscricao DATE
+);
+DESC inscricao;
