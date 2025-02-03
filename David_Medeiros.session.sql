@@ -46,3 +46,9 @@ CREATE TABLE IF NOT EXISTS cargo(
     descricao VARCHAR(30)
 );
 DESC cargo;
+
+CREATE TABLE IF NOT EXISTS departamento(
+    id_depto INTEGER,
+    descricao VARCHAR(30)
+);
+DESC departamento;
