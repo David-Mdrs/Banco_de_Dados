@@ -76,3 +76,9 @@ DESC processo_seletivo;
 -- Visualizando para confirmar existência das tabelas
 
 SHOW TABLES;
+
+
+-- Criando restrições
+
+ALTER TABLE funcionario ADD CONSTRAINT PK_func PRIMARY KEY (id_func);
+
