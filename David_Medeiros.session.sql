@@ -40,3 +40,9 @@ CREATE TABLE IS NOT EXISTS teste(
     dt_teste DATE
 );
 DESC teste;
+
+CREATE TABLE IF NOT EXISTS cargo(
+    id_cargo INTEGER,
+    descricao VARCHAR(30)
+);
+DESC cargo;
