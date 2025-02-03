@@ -82,3 +82,4 @@ SHOW TABLES;
 
 ALTER TABLE funcionario ADD CONSTRAINT PK_func PRIMARY KEY (id_func);
 
+ALTER TABLE candidato ADD CONSTRAINT PK_candidato PRIMARY KEY (id_candidato);
