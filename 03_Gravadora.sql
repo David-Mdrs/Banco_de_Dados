@@ -9,4 +9,14 @@
 
 -- Crianco novo banco de dados caso não exista
 
-CREATE DATABASE IF NOT EXISTS Gravadora;
+CREATE DATABASE IF NOT EXISTS gravadora;
+
+
+-- Criando tabelas do banco de dados caso não existam
+
+CREATE TABLE IF NOT EXISTS cd (
+    codigo INT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    gravadora VARCHAR(30),
+    data DATE
+);
