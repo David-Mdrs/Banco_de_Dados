@@ -60,3 +60,21 @@ INSERT cantor(codigo, nome, biografia) VALUES
     (5, "Martinho do Bairro", "Alem de pagode, canta sertanejo desde crianca. Tem familia em Campina Grande.");
 SELECT *FROM cantor;
 
+INSERT musica(cd, numero, titulo, cantor, tempo, genero) VALUES
+    (1, 1, "Coracao apaixonado", 1, 120, "MPB"),
+    (1, 2, "Coracao dilacerado", 2, 180, "MPB"),
+    (1, 3, "Mulher", 1, 120, "PAGODE"),
+    (1, 4, "Mulheres apaixonadas", 4, 178, NULL),
+    (1, 5, "Vou embora", 5, 300, "SAMBA"),
+    (2, 1, "Adeus para sempre", 2, 180, "SAMBA"),
+    (2, 2, "Nova infancia", 4, 198, "MPB"),
+    (2, 3, "Eu voltei", 5, 345, "MPB"),
+    (2, 4, "Volta para mim", 5, 532, "SAMBA"),
+    (3, 1, "Amor de irmao", 4, 123, "SAMBA"),
+    (3, 2, "Amigo", 3, 452, "SERTANEJO"),
+    (3, 3, "Amigo para sempre", 2, 89, "SERTANEJO"),
+    (3, 4, "Cancao para o amigo", 1, 365, "MPB"),
+    (4, 1, "Andancas", 2, 320, "MPB"),
+    (4, 2, "Irmao do coracao", 4, 180, NULL),
+    (4, 3, "Amor de mae", 3, 124, "PAGODE");
+SELECT *FROM musica;
