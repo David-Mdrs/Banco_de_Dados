@@ -28,3 +28,16 @@ CREATE TABLE cantor (
     biografia TEXT
 );
 DESC cantor;
+
+CREATE TABLE musica (
+    cd INT,
+    numero INT,
+    titulo VARCHAR(40) NOT NULL,
+    cantor INT NOT NULL,
+    tempo INT,
+    genero VARCHAR(20),
+    PRIMARY KEY (cd, numero),
+    FOREIGN KEY (cd) REFERENCES cd(codigo),
+    FOREIGN KEY (cantor) REFERENCES cantor(codigo)
+);
+DESC musica;
