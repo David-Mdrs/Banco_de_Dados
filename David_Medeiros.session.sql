@@ -97,3 +97,5 @@ ALTER TABLE inscricao ADD CONSTRAINT FK_insc_cargo FOREIGN KEY (cago) REFERENCES
 ALTER TABLE teste ADD CONSTRAINT FK_teste_processo FOREIGN KEY (processo) REFERENCES processo_seletivo(id_processo);
 ALTER TABLE teste ADD CONSTRAINT FK_teste_cargo FOREIGN KEY (cargo) REFERENCES cargo(id_cargo);
 ALTER TABLE teste ADD CONSTRAINT FK_teste_inscricao FOREIGN KEY (inscricao) REFERENCES inscricao(id_inscricao);
+ALTER TABLE funcionario ADD CONSTRAINT FK_func_depto FOREIGN KEY (depto) REFERENCES departamento(id_depto);
+ALTER TABLE funcionario ADD CONSTRAINT FK_func_cargo FOREIGN KEY (cargo) REFERENCES cargo(id_cargo);
