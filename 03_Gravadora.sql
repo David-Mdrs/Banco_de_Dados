@@ -14,7 +14,7 @@ CREATE DATABASE IF NOT EXISTS gravadora;
 
 -- Criando tabelas do banco de dados caso não existam
 
-CREATE TABLE IF NOT EXISTS cd (
+CREATE TABLE IF NOT EXISTS cd(
     codigo INT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
     gravadora VARCHAR(30),
@@ -22,14 +22,14 @@ CREATE TABLE IF NOT EXISTS cd (
 );
 DESC cd;
 
-CREATE TABLE cantor (
+CREATE TABLE IF NOT EXISTS cantor(
     codigo INT PRIMARY KEY,
     nome VARCHAR(60) NOT NULL,
     biografia TEXT
 );
 DESC cantor;
 
-CREATE TABLE musica (
+CREATE TABLE IF NOT EXISTS musica(
     cd INT,
     numero INT,
     titulo VARCHAR(40) NOT NULL,
@@ -41,3 +41,12 @@ CREATE TABLE musica (
     FOREIGN KEY (cantor) REFERENCES cantor(codigo)
 );
 DESC musica;
+
+
+-- Adicionando dados
+
+INSERT cd(codigo, nome, gravadora, data) VALUES
+    (1, "Fantasia", "Som Preso", "2010-09-02"),
+    (2, "Fantasia de Verão", "Som Preso", "2020-10-20"),
+    (3, "Romantico Total", "RGB", "2022-09-21");
+DESC cd;
