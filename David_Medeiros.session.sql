@@ -81,16 +81,16 @@ SHOW TABLES;
 -- Criando restrições
 
 ALTER TABLE funcionario ADD CONSTRAINT PK_func PRIMARY KEY (id_func);
-
 ALTER TABLE candidato ADD CONSTRAINT PK_candidato PRIMARY KEY (id_candidato);
 
 ALTER TABLE candidato_funcionario ADD CONSTRAINT PK_cand_func PRIMARY KEY(funcionario, candidato);
-
 ALTER TABLE candidato_funcionario ADD CONSTRAINT FK_cand_func FOREIGN KEY (funcionario) REFERENCES funcionario(id_func);
-
 ALTER TABLE candidato_funcionario ADD CONSTRAINT FK_cand_func_cand FOREIGN KEY (candidato) REFERENCES candidato(id_candidato);
 
 ALTER TABLE inscricao ADD CONSTRAINT PK_inscricao PRIMARY KEY (id_inscricao);
-
 ALTER TABLE cargo ADD CONSTRAINT PK_cargo PRIMARY KEY (id_cargo);
+
+ALTER TABLE inscricao ADD CONSTRAINT FK_insc_candidato FOREIGN KEY (candidato) REFERENCES CANDIDATO(id_candidato);
+
+ALTER TABLE inscricao ADD CONSTRAINT FK_insc_cargo FOREIGN KEY (cago) REFERENCES CARGO(id_cargo)
 
