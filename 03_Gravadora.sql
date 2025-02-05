@@ -20,3 +20,11 @@ CREATE TABLE IF NOT EXISTS cd (
     gravadora VARCHAR(30),
     data DATE
 );
+DESC cd;
+
+CREATE TABLE cantor (
+    codigo INT PRIMARY KEY,
+    nome VARCHAR(60) NOT NULL,
+    biografia TEXT
+);
+DESC cantor;
