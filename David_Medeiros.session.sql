@@ -78,7 +78,7 @@ DESC processo_seletivo;
 SHOW TABLES;
 
 
--- Criando restrições
+-- Chaves primárias
 
 ALTER TABLE funcionario ADD CONSTRAINT PK_func PRIMARY KEY (id_func);
 ALTER TABLE candidato ADD CONSTRAINT PK_candidato PRIMARY KEY (id_candidato);
@@ -88,9 +88,15 @@ ALTER TABLE teste ADD CONSTRAINT PK_teste PRIMARY KEY (id_teste);
 ALTER TABLE processo_seletivo ADD CONSTRAINT PRIMARY KEY (id_processo);
 ALTER TABLE departamento ADD CONSTRAINT PRIMARY KEY (id_depto);
 
+
+-- Tabela do relacionamento N:N
+
 ALTER TABLE candidato_funcionario ADD CONSTRAINT PK_cand_func PRIMARY KEY(funcionario, candidato);
 ALTER TABLE candidato_funcionario ADD CONSTRAINT FK_cand_func FOREIGN KEY (funcionario) REFERENCES funcionario(id_func);
 ALTER TABLE candidato_funcionario ADD CONSTRAINT FK_cand_func_cand FOREIGN KEY (candidato) REFERENCES candidato(id_candidato);
+
+
+-- Chaves estrangeiras
 
 ALTER TABLE inscricao ADD CONSTRAINT FK_insc_candidato FOREIGN KEY (candidato) REFERENCES CANDIDATO(id_candidato);
 ALTER TABLE inscricao ADD CONSTRAINT FK_insc_cargo FOREIGN KEY (cago) REFERENCES CARGO(id_cargo);
@@ -99,3 +105,16 @@ ALTER TABLE teste ADD CONSTRAINT FK_teste_cargo FOREIGN KEY (cargo) REFERENCES c
 ALTER TABLE teste ADD CONSTRAINT FK_teste_inscricao FOREIGN KEY (inscricao) REFERENCES inscricao(id_inscricao);
 ALTER TABLE funcionario ADD CONSTRAINT FK_func_depto FOREIGN KEY (depto) REFERENCES departamento(id_depto);
 ALTER TABLE funcionario ADD CONSTRAINT FK_func_cargo FOREIGN KEY (cargo) REFERENCES cargo(id_cargo);
+
+
+-- Restrições para tabela candidato_funcionario
+ALTER TABLE candidato_funcionario MODIFY dt_inscricao DATE NOT NULL;
+
+-- Restrições para tabela teste
+ALTER TABLE teste ADD COLUMN nota REAL NOT NULL;
+ALTER TABLE teste CHANGE COLUMN nota nota_teste REAL NOT NULL;
+ALTER TABLE teste ADD CONSTRAINT CK_nota CHECK (nota_teste BETWEEN 0 AND 100);
+ALTER TABLE teste ALTER nota_teste SET DEFAULT 7;
+
+-- Alterando o nome da tabela processo_seletivo
+RENAME TABLE processo_seletivo TO processo;
