@@ -88,3 +88,9 @@ ALTER TABLE candidato_funcionario ADD CONSTRAINT PK_cand_func PRIMARY KEY(funcio
 
 ALTER TABLE candidato_funcionario ADD CONSTRAINT FK_cand_func FOREIGN KEY (funcionario) REFERENCES funcionario(id_func);
 
+ALTER TABLE candidato_funcionario ADD CONSTRAINT FK_cand_func_cand FOREIGN KEY (candidato) REFERENCES candidato(id_candidato);
+
+ALTER TABLE inscricao ADD CONSTRAINT PK_inscricao PRIMARY KEY (id_inscricao);
+
+ALTER TABLE cargo ADD CONSTRAINT PK_cargo PRIMARY KEY (id_cargo);
+
