@@ -93,5 +93,7 @@ ALTER TABLE candidato_funcionario ADD CONSTRAINT FK_cand_func FOREIGN KEY (funci
 ALTER TABLE candidato_funcionario ADD CONSTRAINT FK_cand_func_cand FOREIGN KEY (candidato) REFERENCES candidato(id_candidato);
 
 ALTER TABLE inscricao ADD CONSTRAINT FK_insc_candidato FOREIGN KEY (candidato) REFERENCES CANDIDATO(id_candidato);
-ALTER TABLE inscricao ADD CONSTRAINT FK_insc_cargo FOREIGN KEY (cago) REFERENCES CARGO(id_cargo)
-
+ALTER TABLE inscricao ADD CONSTRAINT FK_insc_cargo FOREIGN KEY (cago) REFERENCES CARGO(id_cargo);
+ALTER TABLE teste ADD CONSTRAINT FK_teste_processo FOREIGN KEY (processo) REFERENCES processo_seletivo(id_processo);
+ALTER TABLE teste ADD CONSTRAINT FK_teste_cargo FOREIGN KEY (cargo) REFERENCES cargo(id_cargo);
+ALTER TABLE teste ADD CONSTRAINT FK_teste_inscricao FOREIGN KEY (inscricao) REFERENCES inscricao(id_inscricao);
