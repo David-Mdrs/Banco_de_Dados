@@ -48,5 +48,15 @@ DESC musica;
 INSERT cd(codigo, nome, gravadora, data) VALUES
     (1, "Fantasia", "Som Preso", "2010-09-02"),
     (2, "Fantasia de Verão", "Som Preso", "2020-10-20"),
-    (3, "Romantico Total", "RGB", "2022-09-21");
-DESC cd;
+    (3, "Romantico Total", "RGB", "2022-09-21"),
+    (4, "Popular", "2024 RGB", NULL);
+SELECT *FROM cd;
+
+INSERT cantor(codigo, nome, biografia) VALUES
+    (1, "Marisa aos Montes", "Nasceu em João Pessoa em 1980. Gravou varios CDs. Formou recentemente os Carnabalistas."),
+    (2, "Zeca Sertanejo", "Nasceu em Patos-PB. Não bebe. Nao fuma. Tem 3 filhos."),
+    (3, "Alexandre Xicara", "Toca pagode desde os 12 anos. Comportamento calmo. Gravou tambem MPB."),
+    (4, "Emerson Seringueira", "Canta MPB e sucessos internacionais desde 2000. Vendeu mais de 3 milhoes de discos."),
+    (5, "Martinho do Bairro", "Alem de pagode, canta sertanejo desde crianca. Tem familia em Campina Grande.");
+SELECT *FROM cantor;
+
