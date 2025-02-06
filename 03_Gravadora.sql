@@ -50,7 +50,7 @@ INSERT cd(codigo, nome, gravadora, data) VALUES
     (2, "Fantasia de Verão", "Som Preso", "2020-10-20"),
     (3, "Romantico Total", "RGB", "2022-09-21"),
     (4, "Popular 2024", "RGB", NULL);
-SELECT *FROM cd;
+SELECT * FROM cd;
 
 -- 3) Adicionando dados a tabela CANTOR
 
@@ -60,7 +60,7 @@ INSERT cantor(codigo, nome, biografia) VALUES
     (3, "Alexandre Xicara", "Toca pagode desde os 12 anos. Comportamento calmo. Gravou tambem MPB."),
     (4, "Emerson Seringueira", "Canta MPB e sucessos internacionais desde 2000. Vendeu mais de 3 milhoes de discos."),
     (5, "Martinho do Bairro", "Alem de pagode, canta sertanejo desde crianca. Tem familia em Campina Grande.");
-SELECT *FROM cantor;
+SELECT * FROM cantor;
 
 
 -- 4) Adicionando dados a tabela MUSICA
@@ -82,16 +82,31 @@ INSERT musica(cd, numero, titulo, cantor, tempo, genero) VALUES
     (4, 1, "Andancas", 2, 320, "MPB"),
     (4, 2, "Irmao do coracao", 4, 180, NULL),
     (4, 3, "Amor de mae", 3, 124, "PAGODE");
-SELECT *FROM musica;
+SELECT * FROM musica;
 
--- 5) 
+-- 5) Alterando dados
 UPDATE cantor SET nome = "Martinho do Zepa" where nome = "Martinho do Bairro";
-SELECT *FROM cantor WHERE nome = "Martinho do Zepa";
+SELECT * FROM cantor WHERE nome = "Martinho do Zepa";
 
--- 6)
+-- 6) Alterando dados
 UPDATE musica SET cantor = 1 WHERE titulo = "Nova infancia";
-SELECT *FROM musica WHERE titulo = "Nova infancia";
+SELECT * FROM musica WHERE titulo = "Nova infancia";
 
--- 7)
+-- 7) Alterando dados
 UPDATE cd SET data = "2024-06-10" WHERE nome = "Popular 2024";
-SELECT *FROM cd WHERE nome = "Popular 2024";
+SELECT * FROM cd WHERE nome = "Popular 2024";
+
+-- 8) Visualizando músicas em ordem crescente de duração
+SELECT * FROM musica ORDER BY tempo ASC;
+
+-- 9) Exibindo os gêneros em ordem alfabética, seguido dos títulos em ordem alfabética das músicas
+SELECT genero, titulo FROM musica ORDER BY genero ASC, titulo ASC;
+
+-- 10) Selecionando CDs da gravadora 'Som Preso'
+SELECT * FROM cd WHERE gravadora = "Som Preso";
+
+-- 11) Exibindo músicas do CD 'Fantasia de Verao'
+SELECT * FROM MUSICA WHERE CD = 2;
+
+-- 12) Exiba as músicas que não tem genero cadastrado
+SELECT * FROM musica WHERE genero IS NULL;
