@@ -78,3 +78,6 @@ INSERT musica(cd, numero, titulo, cantor, tempo, genero) VALUES
     (4, 2, "Irmao do coracao", 4, 180, NULL),
     (4, 3, "Amor de mae", 3, 124, "PAGODE");
 SELECT *FROM musica;
+
+UPDATE cantor SET nome = "Martinho do Zepa" where nome = "Martinho do Bairro";
+SELECT * FROM cantor WHERE nome = "Martinho do Zepa";
