@@ -110,3 +110,14 @@ SELECT * FROM MUSICA WHERE CD = 2;
 
 -- 12) Exiba as músicas que não tem genero cadastrado
 SELECT * FROM musica WHERE genero IS NULL;
+
+-- 13) Altere o gênero da música Irmao do coracao e Mulheres apaixonadas para MPB
+UPDATE musica SET genero = "MPB" WHERE titulo IN ("Irmao do coracao", "Mulheres apaixonadas");
+SELECT genero FROM musica WHERE titulo IN ("Irmao do coracao", "Mulheres apaixonadas");
+
+-- 14) Exiba todas as músicas que contém a palavra irmao
+SELECT * FROM musica WHERE titulo LIKE '%irmao%';
+
+-- 15) Exibindo músicas do gênero MPB
+SELECT * FROM musica WHERE genero = "MPB";
+
