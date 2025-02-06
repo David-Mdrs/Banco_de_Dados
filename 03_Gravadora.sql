@@ -12,7 +12,7 @@
 CREATE DATABASE IF NOT EXISTS gravadora;
 
 
--- Criando tabelas do banco de dados caso não existam
+-- 1) Criando tabelas do banco de dados caso não existam
 
 CREATE TABLE IF NOT EXISTS cd(
     codigo INT PRIMARY KEY,
@@ -43,14 +43,16 @@ CREATE TABLE IF NOT EXISTS musica(
 DESC musica;
 
 
--- Adicionando dados
+-- 2) Adicionando dados a tabela CD
 
 INSERT cd(codigo, nome, gravadora, data) VALUES
     (1, "Fantasia", "Som Preso", "2010-09-02"),
     (2, "Fantasia de Verão", "Som Preso", "2020-10-20"),
     (3, "Romantico Total", "RGB", "2022-09-21"),
-    (4, "Popular", "2024 RGB", NULL);
+    (4, "Popular 2024", "RGB", NULL);
 SELECT *FROM cd;
+
+-- 3) Adicionando dados a tabela CANTOR
 
 INSERT cantor(codigo, nome, biografia) VALUES
     (1, "Marisa aos Montes", "Nasceu em João Pessoa em 1980. Gravou varios CDs. Formou recentemente os Carnabalistas."),
@@ -59,6 +61,9 @@ INSERT cantor(codigo, nome, biografia) VALUES
     (4, "Emerson Seringueira", "Canta MPB e sucessos internacionais desde 2000. Vendeu mais de 3 milhoes de discos."),
     (5, "Martinho do Bairro", "Alem de pagode, canta sertanejo desde crianca. Tem familia em Campina Grande.");
 SELECT *FROM cantor;
+
+
+-- 4) Adicionando dados a tabela MUSICA
 
 INSERT musica(cd, numero, titulo, cantor, tempo, genero) VALUES
     (1, 1, "Coracao apaixonado", 1, 120, "MPB"),
@@ -79,5 +84,14 @@ INSERT musica(cd, numero, titulo, cantor, tempo, genero) VALUES
     (4, 3, "Amor de mae", 3, 124, "PAGODE");
 SELECT *FROM musica;
 
+-- 5) 
 UPDATE cantor SET nome = "Martinho do Zepa" where nome = "Martinho do Bairro";
-SELECT * FROM cantor WHERE nome = "Martinho do Zepa";
+SELECT *FROM cantor WHERE nome = "Martinho do Zepa";
+
+-- 6)
+UPDATE musica SET cantor = 1 WHERE titulo = "Nova infancia";
+SELECT *FROM musica WHERE titulo = "Nova infancia";
+
+-- 7)
+UPDATE cd SET data = "2024-06-10" WHERE nome = "Popular 2024";
+SELECT *FROM cd WHERE nome = "Popular 2024";
