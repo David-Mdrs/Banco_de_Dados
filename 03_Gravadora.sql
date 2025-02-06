@@ -121,3 +121,29 @@ SELECT * FROM musica WHERE titulo LIKE '%irmao%';
 -- 15) Exibindo músicas do gênero MPB
 SELECT * FROM musica WHERE genero = "MPB";
 
+-- 16) Exibindo músicas com duração entre 2 e 4 minutos
+SELECT * FROM musica WHERE tempo BETWEEN 200 and 400;
+
+-- 17) Selecionando os CDs lançados no mês de setembro
+SELECT * FROM cd WHERE MONTH(data) = 9;
+
+-- 18) Exibindo cantores cujo nome iniciam com a letra M
+SELECT * FROM cantor WHERE nome LIKE 'M%';
+
+-- 19) Exibindo dados dos CDs do mais recente para o mais antigo
+SELECT * FROM cd ORDER BY data DESC;
+
+-- 20) Exibindo o título, o gênero e o tempo de duração das músicas do gênero SAMBA, PAGODE e SERTANEJO
+SELECT titulo, genero, tempo FROM musica WHERE genero IN ("SAMBA", "PAGODE", "SERTANEJO");
+
+-- 21) Selecionando todas as músicas que os títulos tenham somente uma palavra
+SELECT * FROM musica WHERE titulo NOT LIKE '% %';
+
+-- 22) Exibindo o nome do CD, o nome da gravadora e há tempo (em anos) os CDs foram lançados em ordem descrescente de tempo
+SELECT nome, gravadora, YEAR(data) FROM cd ORDER BY YEAR(data) DESC;
+
+-- 23) Exclua a música Vou embora. O que aconteceu? Explique
+DELETE FROM musica WHERE titulo = 'Vou embora';
+SELECT * FROM musica;
+
+-- RESPOSTA: A exclusão foi concluída com sucesso
