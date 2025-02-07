@@ -1,8 +1,8 @@
 /* =======================================================
-   Projeto: Roteiro 01 - Disciplina de Banco de Dados
+   Projeto: Gravadora - Disciplina de Banco de Dados
    Autor: David Medeiros Santos
-   Data de Criação: 02/02/2025
-   Descrição: Explorando os primeiros comandos SQL DDL
+   Data de Criação: 05/02/2025
+   Descrição: Banco de dados para gravadora de músicas
    Versão: 1.0
    ======================================================= */
 
