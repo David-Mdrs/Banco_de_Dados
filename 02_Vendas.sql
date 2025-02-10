@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS venda(
    data DATE,
    total REAL,
    codigoCli INT NOT NULL,
-   FOREIGN KEY (codigoCli) REFERENCES cliente(codigoCli) 
+   CONSTRAINT fk_venda_cliente FOREIGN KEY (codigoCli) REFERENCES cliente(codigoCli)
 );
 DESC venda;
 
@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS item_venda(
    codigo INT NOT NULL,
    numero INT NOT NULL,
    PRIMARY KEY (codigo, numero),
-   FOREIGN KEY (codigo) REFERENCES produto(codigo),
-   FOREIGN KEY (numero) REFERENCES venda(numero)
+   CONSTRAINT fk_itemProduto FOREIGN KEY (codigo) REFERENCES produto(codigo),
+   CONSTRAINT fk_itemVenda FOREIGN KEY (numero) REFERENCES venda(numero)
 );
 DESC item_venda;
