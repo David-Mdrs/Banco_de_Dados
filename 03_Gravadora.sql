@@ -147,3 +147,26 @@ DELETE FROM musica WHERE titulo = 'Vou embora';
 SELECT * FROM musica;
 
 -- RESPOSTA: A exclusão foi concluída com sucesso
+
+
+-- Assuntos da segunda aula (Questões em sala)
+
+SELECT COUNT(titulo) AS "Musicas com amor" FROM musica WHERE titulo LIKE "%amor%";
+
+SELECT MAX(tempo) AS "Maior tempo (s)" FROM musica;
+
+SELECT MIN(data) AS "Mais antiga" FROM cd;
+
+SELECT gravadora, COUNT(*) FROM cd GROUP BY gravadora;
+
+SELECT cd, SUM(tempo)/60 AS "Total min" FROM musica GROUP BY cd;
+
+SELECT cantor, COUNT(*) AS "Musicas" FROM musica GROUP BY cantor;
+
+SELECT genero, COUNT(*) FROM musica GROUP BY genero;
+
+SELECT genero, COUNT(*) AS "Quant" FROM musica GROUP BY genero HAVING Quant >= 3;
+
+SELECT * FROM musica;
+
+SELECT * FROM cantor WHERE biografia NOT LIKE "%Campina Grande%";
