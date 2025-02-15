@@ -23,12 +23,14 @@ CREATE TABLE empregado (
    salario DECIMAL(7,2) NOT NULL,
    comissao DECIMAL(7,2) NOT NULL
 );
+DESC empregado;
 
 CREATE TABLE secao (
    idsec INTEGER PRIMARY KEY, 
    nome VARCHAR(20) NOT NULL, 
    cidade VARCHAR(20) NOT NULL
 );
+DESC secao;
 
 
 -- Definindo chaves estrangeiras
@@ -47,6 +49,7 @@ INSERT INTO secao VALUES
    (50, 'Administração', 'Recife'), 
    (60, 'Informática', 'Campina Grande'), 
    (70, 'Recursos Humanos', 'João Pessoa');
+SELECT * FROM secao;
 
 INSERT INTO empregado VALUES 
    (3, 'Álvaro Dias', 50, 'Administrador', NULL, 2500, 0),
@@ -55,3 +58,18 @@ INSERT INTO empregado VALUES
    (4, 'Antônio Carlos', 10, 'Engenheiro', 3, 2400, 20),  
    (5, 'Susana Silva', 20, 'Administrador', NULL, 2750, 30),
    (6, 'Cláudio José', 60, 'Vendedor', 4, 1000, 50);
+SELECT * FROM empregado;
+
+
+-- Lista de questões
+
+-- 1. Exiba, para cada seção, o número da seção, a quantidade de empregados e total dos salários sem comissão.
+SELECT secao, COUNT(*) AS "qtd_empregados", SUM(salario) AS "total_salarios"
+   FROM empregado WHERE comissao = 0 GROUP BY secao;
+
+-- 2. Exiba, para cada cargo, o nome do cargo, o número de empregados e salário médio.
+SELECT cargo, COUNT(*) AS "qnt_empregados", AVG(salario) AS "media_salario" 
+   FROM empregado GROUP BY cargo;
+
+-- 3. Mostre o cargo, número de empregados e o salário médio para cada cargo, desde que o cargo tenha pelo menos 2 empregados.
+SELECT cargo, COUNT(*) AS "qnt_empregados", AVG(salario) from empregado WHERE cargo;
