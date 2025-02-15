@@ -64,12 +64,42 @@ SELECT * FROM empregado;
 -- Lista de questões
 
 -- 1. Exiba, para cada seção, o número da seção, a quantidade de empregados e total dos salários sem comissão.
-SELECT secao, COUNT(*) AS "qtd_empregados", SUM(salario) AS "total_salarios"
-   FROM empregado WHERE comissao = 0 GROUP BY secao;
+SELECT secao, COUNT(*) AS qtd_empregados, SUM(salario) AS total_salarios
+   FROM empregado GROUP BY secao;
 
 -- 2. Exiba, para cada cargo, o nome do cargo, o número de empregados e salário médio.
-SELECT cargo, COUNT(*) AS "qnt_empregados", AVG(salario) AS "media_salario" 
+SELECT cargo, COUNT(*) AS qnt_empregados, AVG(salario) AS media_salarios
    FROM empregado GROUP BY cargo;
 
 -- 3. Mostre o cargo, número de empregados e o salário médio para cada cargo, desde que o cargo tenha pelo menos 2 empregados.
-SELECT cargo, COUNT(*) AS "qnt_empregados", AVG(salario) from empregado WHERE cargo;
+SELECT cargo, COUNT(*) AS qnt_empregados, AVG(salario) AS media_salarios
+   FROM empregado GROUP BY cargo HAVING qnt_empregados >= 2;
+
+-- 4. Exiba o valor do salário (incluindo a comissão) mais alto da empresa. A comissao na tabela Empregado está em valor percentual.
+SELECT MAX(salario + (salario * (comissao / 100))) AS maior_salario
+   FROM empregado;
+
+-- 5. Exiba o valor do salário (incluindo a comissão) mais alto da empresa para cada cargo.
+SELECT cargo, MAX(salario + (salario * (comissao / 100))) AS maior_salario
+   FROM empregado GROUP BY cargo;
+
+-- 6. Exiba o salário médio por cargo, exceto para o cargo o de Administrador.
+SELECT cargo, AVG(salario) AS media_salario
+   FROM empregado GROUP BY cargo HAVING cargo != "Administrador";
+
+-- 7. Exiba a quantidade de cidades que a empresa atende, isto é, as cidades que possuem seção.
+SELECT COUNT(DISTINCT cidade) AS qtd_cidades 
+   FROM secao;
+
+-- 8. Exiba a quantidade de empregados que não possui chefe.
+SELECT COUNT(*) AS qnt_empregados
+   FROM empregado WHERE chefe IS NULL;
+
+-- 9. Exiba o custo total da empresa com pagamento de salário em cada seção,
+--    mas apresente somente a seção (e o custo), onde o custo total é superior a R$2500,00.
+SELECT secao, SUM(salario + (salario * (comissao / 100))) AS custo_total
+   FROM empregado GROUP BY secao HAVING custo_total > 2500;
+
+-- 10
+SELECT cargo, SUM(salario) AS total_salario
+   FROM empregado GROUP BY cargo ORDER BY total_salario ASC;
