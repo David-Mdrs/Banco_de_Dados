@@ -311,3 +311,75 @@ CREATE TABLE tabela (
 ```
 
 </details>
+
+## 🔒 Comandos de Alteração
+>As restrições de integridade são essenciais para garantir a `qualidade` e `consistência` dos dados em um banco de dados. Elas definem `regras` que os dados devem seguir, assegurando a ausência de `informações incorretas` ou `inconsistentes`. A seguir, apresento os principais tipos de restrições e seus usos.
+
+<details>
+  <summary><strong> Insert 📥 </strong></summary><br>
+
+>Adiciona novos registros em uma tabela.
+```sql
+-- Criando tabela
+CREATE TABLE IF NOT EXISTS nome_tabela (
+    id INT PRIMARY KEY,
+    nome VARCHAR(100) UNIQUE,
+);
+```
+```sql
+-- Inserindo dados
+INSERT INTO tabela VALUES
+    (123, "Marcos"),
+    (435, "Lais");
+```
+```sql
+-- Inserindo dados específicos
+INSERT INTO tabela (id) VALUES (123, 435);
+-- ou
+INSERT INTO tabela (nome) VALUES ("Marcos", "Lais");
+```
+
+</details>
+
+<details>
+  <summary><strong> Update ♻️ </strong></summary><br>
+
+>Modifica dados existentes com base em uma condição.
+```sql
+-- Criando tabela
+CREATE TABLE IF NOT EXISTS nome_tabela (
+    id INT PRIMARY KEY,
+    nome VARCHAR(100) UNIQUE,
+);
+```
+```sql
+-- Atualizando apenas um campo
+UPDATE nome_tabela SET id = novo_valor;
+```
+```sql
+-- Atualizando mais de um campo
+UPDATE nome_tabela SET id = valor1, nome = valor2;
+```
+```sql
+-- Atualizando campos com condição
+UPDATE nome_tabela SET id = novo_valor WHERE condição;
+```
+
+</details>
+
+<details>
+  <summary><strong> Delete 🗑️ </strong></summary><br>
+
+>Deleta registros do banco de dados.
+```sql
+-- Deletando todos os registros da tabela
+DELETE FROM nome_tabela;
+```
+```sql
+-- Deletando registros da tabela com base na condição
+DELETE FROM tabela WHERE condição;
+```
+
+</details>
+
+</details>
