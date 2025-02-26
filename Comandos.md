@@ -185,6 +185,31 @@ ALTER TABLE nome_tabela ADD PRIMARY KEY (dado1, dado2);
 <details>
   <summary><strong> Chaves estrangeiras 🔐 </strong></summary><br>
 
+```sql
+-- Tabela com chave primária (tabela que vai ser herdada)
+CREATE TABLE IF NOT EXISTS tabelaChaveP(INT chave PRIMARY KEY);
+```
+```sql
+-- Chave estrangeira durante a criação da tabela
+-- Vale lembrar que não é uma boa prática.
+-- Pode ocasionar em erro, caso chave primária não exista.
+CREATE TABLE IF NOT EXISTS nome_tabela(
+    INT dado1 PRIMARY KEY,
+    chave_estrangeira INT,
+    FOREIGN KEY (chave_estrangeira) REFERENCES tabelaChaveP(chave)
+);
+```
+```sql
+-- Chave estrangeira após a criação da tabela
+CREATE TABLE IF NOT EXISTS nome_tabela(
+    INT dado1 PRIMARY KEY,
+    chave_estrangeira INT
+);
+-- Criando chave estrangeira
+ALTER TABLE nome_tabela ADD CONSTRAINT fk_chave
+FOREIGN KEY (chave_estrangeira) REFERENCES tabelaChaveP(chave);
+```
+
 </details>
 
 <details>
