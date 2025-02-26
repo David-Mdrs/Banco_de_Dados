@@ -116,6 +116,7 @@ CREATE DATABASE IF NOT EXISTS nome_do_banco;
 -- Iniciando banco de dados
 USE nome_do_banco;
 ```
+
 </details>
 
 <details>
@@ -143,6 +144,7 @@ CREATE TABLE IF NOT EXISTS nome_tabela(
 -- Visualizando campos da tabela
 DESC nome_tabela;
 ```
+
 </details>
 
 <details>
@@ -215,4 +217,15 @@ FOREIGN KEY (chave_estrangeira) REFERENCES tabelaChaveP(chave);
 <details>
   <summary><strong> Tipos de dados 🧮 </strong></summary><br>
 
+>Principais tipos de dados mais utilizados para definir colunas em tabelas SQL:
+
+```sql
+INT:          Números inteiros.
+VARCHAR(n):   Textos de tamanho variável, com tamanho "n" de caracteres.
+TEXT:         Grandes quantidades de texto.
+DATE:         Datas em formato YYYY-MM-DD.
+DECIMAL(p,s): "p" é o total de dígitos e "s" é o número de casas decimais.
+BOOLEAN:      Armazena valores TRUE ou FALSE.
+FLOAT:        Armazena números de ponto flutuante com precisão simples.
+```
 </details>
