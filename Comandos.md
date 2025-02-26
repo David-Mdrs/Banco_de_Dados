@@ -1,4 +1,7 @@
-## 📑 Resumo dos comandos SQL
+## 📚 Resumo dos Comandos SQL
+Este arquivo resume os principais comandos `SQL`, oferecendo uma consulta rápida para facilitar o `gerenciamento` e `manipulação` de dados em bancos de dados.
+
+>Os `comandos SQL` são organizados em diferentes categorias, como `DDL`, `DML`, `DCL` e `TCL`. Abaixo, você encontrará um breve resumo de cada um desses tipos, com explicações e exemplos para facilitar o entendimento e aplicação.
 
 <details>
   <summary><strong> Comandos DDL (Data Definition Language) 📂</strong></summary><br>
@@ -95,4 +98,42 @@ DELETE FROM cliente WHERE id = 2;
 -- Revertendo exclusão (ROLLBACK)
 ROLLBACK;
 ```
+</details>
+
+## 🗂️ Comandos de Definição de Estruturas
+>Os comandos que definem a estrutura do banco de dados são fundamentais para sua `organização` e `arquitetura`, garantindo sua `funcionalidade` e `integridade`. Abaixo, apresento exemplos práticos para ajudar no entendimento e aplicação desses comandos.
+
+<details>
+  <summary><strong> Banco de dados 🏛️ </strong></summary><br>
+
+```sql
+-- Criando novo banco de dados
+CREATE DATABASE nome_do_banco;
+--- ou
+CREATE DATABASE IF NOT EXISTS nome_do_banco;
+```
+```sql
+-- Iniciando banco de dados
+USE nome_do_banco;
+```
+</details>
+
+<details>
+  <summary><strong> Tabelas 📊 </strong></summary><br>
+
+</details>
+
+<details>
+  <summary><strong> Chaves primárias 🔑 </strong></summary><br>
+
+</details>
+
+<details>
+  <summary><strong> Chaves estrangeiras 🔐 </strong></summary><br>
+
+</details>
+
+<details>
+  <summary><strong> Tipos de dados 🧮 </strong></summary><br>
+
 </details>
