@@ -16,6 +16,8 @@ Para isso, o uso de ferramentas como o `BrModelo` foi fundamental na construçã
 - Exercícios e práticas de consultas. 🔍
 - Diagramas para diferentes minimundos. 🌐
 
+Caso queira analisar o resumo dos comandos aprendidos, basta acessar o conteúdo abaixo:<br> [Lista de comandos](https://github.com/David-Mdrs/Banco_de_Dados/blob/main/Comandos.md). ✅
+
 ## 🤝 Contribuições
 
 Para contribuir com `<Banco_de_Dados>`, siga estas etapas:
