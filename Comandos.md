@@ -121,10 +121,33 @@ USE nome_do_banco;
 <details>
   <summary><strong> Tabelas 📊 </strong></summary><br>
 
+```sql
+-- Criando nova tabela sem dados
+CREATE TABLE nome_tabela;
+-- ou
+CREATE TABLE IF NOT EXISTS nome_tabela;
+```
+```sql
+-- Criando nova tabela com dados
+CREATE TABLE nome_tabela(
+    INT dado1,
+    VARCHAR(10) dado2
+);
+-- ou
+CREATE TABLE IF NOT EXISTS nome_tabela(
+    INT dado1,
+    VARCHAR(10) dado2
+);
+```
+```sql
+-- Visualizando campos da tabela
+DESC nome_tabela;
+```
 </details>
 
 <details>
   <summary><strong> Chaves primárias 🔑 </strong></summary><br>
+
 
 </details>
 
