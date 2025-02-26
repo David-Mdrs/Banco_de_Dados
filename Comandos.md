@@ -106,14 +106,14 @@ ROLLBACK;
 <details>
   <summary><strong> Banco de dados 🏛️ </strong></summary><br>
 
+>Criando novo banco de dados
 ```sql
--- Criando novo banco de dados
 CREATE DATABASE nome_do_banco;
 --- ou
 CREATE DATABASE IF NOT EXISTS nome_do_banco;
 ```
+>Iniciando banco de dados
 ```sql
--- Iniciando banco de dados
 USE nome_do_banco;
 ```
 
@@ -122,14 +122,14 @@ USE nome_do_banco;
 <details>
   <summary><strong> Tabelas 📊 </strong></summary><br>
 
+>Criando nova tabela sem dados
 ```sql
--- Criando nova tabela sem dados
 CREATE TABLE nome_tabela;
 -- ou
 CREATE TABLE IF NOT EXISTS nome_tabela;
 ```
+>Criando nova tabela com dados
 ```sql
--- Criando nova tabela com dados
 CREATE TABLE nome_tabela(
     INT dado1,
     VARCHAR(10) dado2
@@ -140,8 +140,8 @@ CREATE TABLE IF NOT EXISTS nome_tabela(
     VARCHAR(10) dado2
 );
 ```
+>Visualizando campos da tabela
 ```sql
--- Visualizando campos da tabela
 DESC nome_tabela;
 ```
 
@@ -150,31 +150,31 @@ DESC nome_tabela;
 <details>
   <summary><strong> Chaves primárias 🔑 </strong></summary><br>
 
+>Chaves primárias durante criação das tabelas
 ```sql
--- Criando chaves primárias durante criação das tabelas
 CREATE TABLE IF NOT EXISTS nome_tabela(
     INT dado1 PRIMARY KEY,
     VARCHAR(10) dado2
 );
 ```
+>Chaves primárias após criação das tabelas
 ```sql
--- Criando chaves primárias após criação das tabelas
 CREATE TABLE IF NOT EXISTS nome_tabela(
     INT dado1,
     VARCHAR(10) dado2
 );
 ALTER TABLE nome_tabela ADD PRIMARY KEY (dado1);
 ```
+>Chaves primária composta durante crianção das tabelas
 ```sql
--- Chaves primária composta durante crianção das tabelas
 CREATE TABLE IF NOT EXISTS nome_tabela(
     INT dado1,
     VARCHAR(10) dado2,
     PRIMARY KEY(dado1, dado2)
 );
 ```
+>Chaves primária composta após criação das tabelas
 ```sql
--- Chaves primária composta após criação das tabelas
 CREATE TABLE IF NOT EXISTS nome_tabela(
     INT dado1,
     VARCHAR(10) dado2
@@ -187,12 +187,12 @@ ALTER TABLE nome_tabela ADD PRIMARY KEY (dado1, dado2);
 <details>
   <summary><strong> Chaves estrangeiras 🔐 </strong></summary><br>
 
+>Tabela com chave primária (tabela que vai ser herdada)
 ```sql
--- Tabela com chave primária (tabela que vai ser herdada)
 CREATE TABLE IF NOT EXISTS tabelaChaveP(INT chave PRIMARY KEY);
 ```
+>Chave estrangeira durante a criação da tabela
 ```sql
--- Chave estrangeira durante a criação da tabela
 -- Vale lembrar que não é uma boa prática.
 -- Pode ocasionar em erro, caso chave primária não exista.
 CREATE TABLE IF NOT EXISTS nome_tabela(
@@ -201,8 +201,8 @@ CREATE TABLE IF NOT EXISTS nome_tabela(
     FOREIGN KEY (chave_estrangeira) REFERENCES tabelaChaveP(chave)
 );
 ```
+>Chave estrangeira após a criação da tabela
 ```sql
--- Chave estrangeira após a criação da tabela
 CREATE TABLE IF NOT EXISTS nome_tabela(
     INT dado1 PRIMARY KEY,
     chave_estrangeira INT
