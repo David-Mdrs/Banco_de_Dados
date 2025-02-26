@@ -148,6 +148,37 @@ DESC nome_tabela;
 <details>
   <summary><strong> Chaves primárias 🔑 </strong></summary><br>
 
+```sql
+-- Criando chaves primárias durante criação das tabelas
+CREATE TABLE IF NOT EXISTS nome_tabela(
+    INT dado1 PRIMARY KEY,
+    VARCHAR(10) dado2
+);
+```
+```sql
+-- Criando chaves primárias após criação das tabelas
+CREATE TABLE IF NOT EXISTS nome_tabela(
+    INT dado1,
+    VARCHAR(10) dado2
+);
+ALTER TABLE nome_tabela ADD PRIMARY KEY (dado1);
+```
+```sql
+-- Chaves primária composta durante crianção das tabelas
+CREATE TABLE IF NOT EXISTS nome_tabela(
+    INT dado1,
+    VARCHAR(10) dado2,
+    PRIMARY KEY(dado1, dado2)
+);
+```
+```sql
+-- Chaves primária composta após criação das tabelas
+CREATE TABLE IF NOT EXISTS nome_tabela(
+    INT dado1,
+    VARCHAR(10) dado2
+);
+ALTER TABLE nome_tabela ADD PRIMARY KEY (dado1, dado2);
+```
 
 </details>
 
