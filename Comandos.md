@@ -69,7 +69,6 @@ GRANT SELECT ON cliente FROM PUBLIC;
 ```sql
 -- Revogando permissão de leitura da tabela (REVOKE)
 REVOKE SELECT ON cliente FROM PUBLIC;
-</details>
 ```
 </details>
 
@@ -229,4 +228,86 @@ BOOLEAN:      Armazena valores TRUE ou FALSE.
 FLOAT:        Armazena números de ponto flutuante com precisão simples.
 
 ```
+</details>
+
+
+## 🔒 Restrições de Integridade
+>As restrições de integridade são essenciais para garantir a `qualidade` e `consistência` dos dados em um banco de dados. Elas definem `regras` que os dados devem seguir, assegurando a ausência de `informações incorretas` ou `inconsistentes`. A seguir, apresento os principais tipos de restrições e seus usos.
+
+<details>
+  <summary><strong> Unique ❗ </strong></summary><br>
+
+>Garante que os valores de uma coluna sejam exclusivos.
+```sql
+-- Definindo restrição UNIQUE
+CREATE TABLE IF NOT EXISTS nome_tabela (
+    id INT PRIMARY KEY,
+    nome VARCHAR(100) UNIQUE,
+);
+```
+
+</details>
+
+<details>
+  <summary><strong> Not Null 🚫 </strong></summary><br>
+
+>Impede que uma coluna aceite valores nulos.
+```sql
+-- Definindo restrição NOT NULL
+CREATE TABLE IF NOT EXISTS nome_tabela (
+    id INT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+);
+```
+
+</details>
+
+<details>
+  <summary><strong> Check ⚖️ </strong></summary><br>
+
+>Define uma condição que os valores devem cumprir.
+```sql
+-- Definindo restrição CHECK
+CREATE TABLE IF NOT EXISTS nome_tabela (
+    id INT PRIMARY KEY,
+    idade INT CHECK (idade >= 18)
+);
+```
+
+</details>
+
+<details>
+  <summary><strong> Default 🔄 </strong></summary><br>
+
+>Atribui um valor automaticamente quando nenhum valor é fornecido.
+```sql
+-- Definindo valor padrão
+CREATE TABLE IF NOT EXISTS nome_tabela (
+    id INT PRIMARY KEY,
+    data DATE DEFAULT CURRENT_DATE
+);
+```
+
+</details>
+
+<details>
+  <summary><strong> Index 🔢 </strong></summary><br>
+
+>Atualiza chaves estrangeiras, caso ocorra alguma mudança nas chaves primárias da tabela herdada.
+```sql
+-- Tabela com chave primária (tabela que vai ser herdada)
+CREATE TABLE IF NOT EXISTS tabelaChaveP(INT chave PRIMARY KEY);
+```
+```sql
+-- Tabela com chave estrangeira atualizada
+CREATE TABLE tabela (
+    id INT PRIMARY KEY,
+    chaveEstrangeira INT,
+    data DATE,
+    FOREIGN KEY (chaveEstrangeira) REFERENCES clientes(chave)
+        ON UPDATE CASCADE
+        ON DELETE SET NULL
+);
+```
+
 </details>
