@@ -312,7 +312,7 @@ CREATE TABLE tabela (
 
 </details>
 
-## 🔒 Comandos de Alteração
+## 🛠️  Comandos de Alteração
 >As restrições de integridade são essenciais para garantir a `qualidade` e `consistência` dos dados em um banco de dados. Elas definem `regras` que os dados devem seguir, assegurando a ausência de `informações incorretas` ou `inconsistentes`. A seguir, apresento os principais tipos de restrições e seus usos.
 
 <details>
